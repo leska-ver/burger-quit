@@ -13,61 +13,53 @@ a:visited {
   color: red; /* Цвет посещенных ссылок */
 }
 
-
-#burger, #clear {
+.menu {
   display: none;
-  opacity: 0;
-} 
+}
 
 .header__list {
-  display: block;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 25vh 0;
-  width: 100vw;
-  height: 50vh;
+  display: flex;
+  gap: 25px;
 }
 
-.header__link {
-  font-size: 20px;
-  font-family: 'Roboto';
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  z-index: 10;
-}
-
-@media (max-width: 444px) {  
-  #burger {
+@media (max-width: 444px) { 
+  .header__nav_none444 {
+    display: none;
+  }
+  .menu {
+    display: block;
+  }
+  #burger{
     position: fixed;
     top: 0;
     left: 0;
-    display: block;
+    color: white;
+    background: linear-gradient(45deg, #9682C8 10%, #05BCC9);;
+    font-size: 32px;
     padding: 16px 16px 32px 32px;
     border-radius: 0% 0% 100% 0%;
-    font-size: 32px;
-    color: black;
-    background: linear-gradient(45deg, #9682C8 10%, #05BCC9);
-    opacity: 1;
     transition: 1s;
     cursor: pointer;
   }
 
-  #clear {
+  #clear{
     position: fixed;
     top: 0;
     right: 0;
-    display: none;
-    padding: 16px;
+    color: white;
     font-size: 32px;
-    color: black;
-    opacity: 1;
+    padding: 16px;
+    display: none;
     cursor: pointer;
   }
 
-  /*Прячем список для js*/
-  #links {
+  #links{
     display: none;
+    flex-direction: column;
+    width: 100vw;
+    height: 50vh;
+    padding: 25vh 0;
+    justify-content: space-around;
   }
 
   .header__nav {
@@ -75,7 +67,12 @@ a:visited {
     z-index: 13;
   }
 
-  .header__list {
-    display: none;
+  .header__link{
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+    font-family: 'Roboto';
+    z-index: 10;
   }
 }  
